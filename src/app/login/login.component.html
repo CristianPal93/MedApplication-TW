@@ -1,0 +1,24 @@
+<h1 style="color: royalblue; font-weight: bold"> Sign In</h1><br><br>
+<div>
+  <div class="username">
+    <mat-form-field appearance="outline">
+      <mat-label>Email address</mat-label>
+      <input matInput placeholder="Email address">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="password">
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input type ="password" matInput placeholder="Password">
+      <mat-icon matSuffix>security</mat-icon>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" style="left: 5%">Login</button>
+    <button mat-raised-button color="primary" style="left: 25%" (click)="onClickEvent('register')">Register</button>
+  </div>
+  <div>
+    <button mat-button color="primary" style="left: 15%" (click)="onClickEventForgot('forgotPassword')">Forgot Password</button>
+  </div>
+</div>

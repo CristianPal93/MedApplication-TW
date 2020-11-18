@@ -1,0 +1,24 @@
+<form>
+<mat-grid-list cols="20" rowHeight="3:2">
+  <mat-grid-tile colspan="20" rowspan="1">
+    <app-nav-bar style="width: 100%"></app-nav-bar>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="8" rowspan="13" >
+    {{component}}
+    <app-login *ngIf="component === 'login' && show" ></app-login>
+    <app-donations *ngIf="component === 'home'"></app-donations>
+    <app-register *ngIf="register"></app-register>
+    <app-forgot-password *ngIf="forgot"></app-forgot-password>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="12" rowspan="13">
+    <app-home *ngIf="component === 'home'" style="width: 100%;"></app-home>
+    {{component}}
+  </mat-grid-tile>
+
+</mat-grid-list>
+<mat-grid-list cols="20" rowHeight="3:2">
+  <mat-grid-tile colspan="20" rowspan="10"><app-bottom-body style="width: 100%"></app-bottom-body></mat-grid-tile>
+  <mat-grid-tile colspan="20" rowspan="1" style="background: #DDBDF1"><app-footer style="width: 100%"></app-footer>
+  </mat-grid-tile>
+</mat-grid-list>
+</form>

@@ -1,0 +1,33 @@
+mat-card-header{
+  width: 200px;
+  height: 350px;
+
+}
+mat-card{
+  border-radius: 15px;
+  width: 380px;
+  height: 500px;
+  background-color: linen;
+}
+.img{
+  width: 350px;
+  height: 300px;
+  border-radius: 25px;
+
+}
+
+mat-card-header{
+  width: 0;
+  height: 0;
+}
+mat-icon{
+  color: mediumblue;
+  padding-left: 2%;
+}
+p.readmore{
+  padding-left: 8%;
+  color: mediumblue;
+  float: left;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
