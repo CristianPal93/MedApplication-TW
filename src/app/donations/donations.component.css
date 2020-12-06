@@ -11,6 +11,9 @@ div.location{
   padding-bottom:9%;
   padding-left: 0%;
 }
+p.thanks{
+  text-align: center;
+}
 p.donationtext{
   font-family: 'Open Sans', sans-serif;
   padding-top: 15px;

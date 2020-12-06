@@ -1,0 +1,28 @@
+
+
+
+
+mat-card{
+  border-radius: 15px;
+  width: 380px;
+  height: 500px;
+  background-color: whitesmoke;
+}
+
+h1.text-moto{
+  padding-top: 5%;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+
+}
+mat-card-title{
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  color: green;
+  text-align: left;
+}
+mat-card-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+}
+

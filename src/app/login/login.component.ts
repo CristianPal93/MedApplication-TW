@@ -1,6 +1,7 @@
-import { registerLocaleData } from '@angular/common';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { InterantionService } from '../_services/interantion.service';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../_services/auth.service';
+import { TokenStorageService } from '../_services/token-storage.service';
+import { AuthenticationService } from '../_services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -8,22 +9,45 @@ import { InterantionService } from '../_services/interantion.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  component ='home' ;
 
-  constructor(private _interationService: InterantionService) { }
+  form: any = {};
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private auth: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.component = 'home';
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.auth.setLoggedIn(true);
+      this.roles = this.tokenStorage.getUser().toUpperCase();
+    }
   }
-  // tslint:disable-next-line:typedef
-  onClickEvent($event) {
-    this._interationService.sendSubComponent($event);
-    this._interationService.registerStatus(false);
+
+  onSubmit(): void {
+    this.authService.login(this.form).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.auth.setLoggedIn(true);
+        this.roles = this.tokenStorage.getUser();
+        console.log(this.roles);
+        this.reloadPage();
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
   }
-  // tslint:disable-next-line:typedef
-  onClickEventForgot($event) {
-    this._interationService.sendSubComponent($event);
-    this._interationService.forgotStatus(true);
+
+  reloadPage(): void {
+    window.location.reload();
   }
 
 }

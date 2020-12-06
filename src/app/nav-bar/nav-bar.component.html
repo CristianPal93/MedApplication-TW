@@ -1,23 +1,34 @@
-<ng-container *ngIf="component">
+<ng-container routerLinkActive="active">
   <mat-toolbar>
     <img src="assets/img/logo.jpg" style="width: 3rem; height: 3rem">
     <span class="example-spacer"></span>
-    <button mat-button color="primary" style="color: green" (click)="sendComponentName('aboutus')">About us</button>
-    <button mat-button color="primary" style="color: green" (click)="sendComponentName('howWeWork')">How we work</button>
-    <button mat-button color="primary" style="color: green" (click)="sendComponentName('mission')">Mission & Vision</button>
-    <button mat-button color="primary" style="color: green" (click)="sendComponentName('ourTeam')">Out Team</button>
-    <button mat-button color="primary" style="color: green" (click)="sendComponentName('resources')">Resources</button>
-    <button mat-button color="primary" style="color: green" (click)="sendComponentName('contactus')">Contact Us</button>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <button mat-button color="primary" style="color: green"
+    routerLink = "about"
+    >About us</button>
+    <button mat-button color="primary" style="color: green"
+    routerLink="/howwework"
+    >How we work</button>
+    <button mat-button color="primary" style="color: green"
+    routerLink = "/mission"
+    >Mission & Vision</button>
+    <button mat-button color="primary" style="color: green"
+    routerLink="ourTeam"
+    >Out Team</button>
+    <button mat-button color="primary" style="color: green"
+    routerLink="/resource"
+    >Resources</button>
+    <button mat-button color="primary" style="color: green"
+    routerLink="/contactUs"
+    >Contact Us</button>
+    <button mat-icon-button color="accent" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink = "/login">
+      <mat-icon
+      color="accent">
+      login
+    </mat-icon></button>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="/">
       <mat-icon
         color="accent"
-        (click)="sendComponentName('login')"
-      >login</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon
-        color="accent"
-        (click)="sendComponentName('home')"
+
       >home</mat-icon>
     </button>
   </mat-toolbar>

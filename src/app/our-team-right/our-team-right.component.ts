@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestsService } from '../_services/requests.service';
 
 @Component({
   selector: 'app-our-team-right',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OurTeamRightComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private requestService: RequestsService) { }
+  doctors: [];
   ngOnInit(): void {
+    this.requestService.getStaff().subscribe(data=>{
+      this.doctors = data;
+      console.log(this.doctors)
+    })
   }
 
 }

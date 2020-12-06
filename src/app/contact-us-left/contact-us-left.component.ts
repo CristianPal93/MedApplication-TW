@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestsService } from '../_services/requests.service';
 
 @Component({
   selector: 'app-contact-us-left',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-us-left.component.css']
 })
 export class ContactUsLeftComponent implements OnInit {
-
-  constructor() { }
+  form: any = {};
+  response: string;
+  constructor(private contactMessage: RequestsService) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    this.contactMessage.PostMessage(this.form).subscribe(data =>{
+      this.response = data.message;
+      alert(data.message)
+    })
+  }
 }

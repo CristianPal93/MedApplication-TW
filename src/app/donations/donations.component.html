@@ -14,8 +14,10 @@
   <p class="donationtext">Suport us with a small donation for cancer research.</p>
 
 <mat-button-toggle-group name="fontStyle" aria-label="hide">
-  <mat-button-toggle value="bold">1 Leu</mat-button-toggle>
-  <mat-button-toggle value="bold">5 Lei</mat-button-toggle>
-  <mat-button-toggle value="bold">10 Lei</mat-button-toggle>
+  <mat-button-toggle value="bold" (click)="smallDonation()">1 Leu</mat-button-toggle>
+  <mat-button-toggle value="bold" (click)="mediumDonation()">5 Lei</mat-button-toggle>
+  <mat-button-toggle value="bold" (click)="largeDonation()">10 Lei</mat-button-toggle>
 </mat-button-toggle-group>
+  <br><br>
+  <p class="thanks" style="color: green">{{thanksmsg}}</p>
 </div>

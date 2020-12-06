@@ -1,101 +1,83 @@
-<!-- <div class="container">
-  <div class="row main">
-    <div class="panel-heading">
-      <div class="panel-title text-center">
-        <hr />
-      </div>
-    </div>
-    <div class="main-login main-center">
-      <form class="form-horizontal" method="post" action="#">
-
-        <div class="form-group">
-          <label class="cols-sm-2 control-label">First Name</label>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control"  placeholder="Enter your firstame"/>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="cols-sm-2 control-label">Last Name</label>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control"  placeholder="Enter your lastame"/>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="email" class="cols-sm-2 control-label">Email</label>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your email"/>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="password" class="cols-sm-2 control-label">Password</label>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-              <input type="password" class="form-control" name="password2" id="password2"  placeholder="Password"/>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="password" class="cols-sm-2 control-label">Confirm Password</label>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-              <input type="password" class="form-control" name="password" id="password"  placeholder="Confirm Password"/>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group ">
-          <a routerLink="/studentregisteration" routerLinkActive="active" type="button" class="btn btn-info btn-block">Register</a>
-        </div>
-
-      </form>
-    </div>
-  </div>
-</div> -->
 
 <h1 style="color: royalblue; font-weight: bold"> Registration</h1><br><br>
 <div>
+  <form
+    name="form"
+    (ngSubmit)="f.form.valid"
+    #f="ngForm"
+    novalidate
+  >
   <div class="name">
     <mat-form-field appearance="outline">
       <mat-label>Full name</mat-label>
-      <input matInput placeholder="Full name">
+      <input matInput placeholder="Full name"
+             type="text"
+             class="form-control"
+             name="fullname"
+             [(ngModel)]="form.fullname"
+             required
+             #fullname="ngModel"
+
+      >
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="cnp">
+    <mat-form-field appearance="outline">
+      <mat-label>CNP</mat-label>
+      <input matInput placeholder="CNP"
+             type="text"
+             class="form-control"
+             name="CNP"
+             [(ngModel)]="form.CNP"
+             required
+             #CNP="ngModel"
+
+      >
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     </mat-form-field>
   </div>
   <div>
   <mat-form-field appearance="outline">
     <mat-label>Email address</mat-label>
-    <input matInput placeholder="Email address">
+    <input matInput placeholder="Email address"
+           type="text"
+           class="form-control"
+           name="email"
+           [(ngModel)]="form.email"
+           required
+           #email="ngModel"
+    >
     <mat-icon matSuffix>alternate_email</mat-icon>
   </mat-form-field>
   </div>
   <div class="password">
     <mat-form-field appearance="outline">
       <mat-label>Password</mat-label>
-      <input type ="password" matInput placeholder="Password">
+      <input type ="password" matInput placeholder="Password"
+             class="form-control"
+             name="password"
+             [(ngModel)]="form.password"
+             required
+             #password="ngModel"
+      >
       <mat-icon matSuffix>security</mat-icon>
     </mat-form-field>
   </div>
   <div class="passwordConfirmation">
     <mat-form-field appearance="outline">
       <mat-label>Password confirmation</mat-label>
-      <input type ="password" matInput placeholder="Password confirmation">
+      <input type ="password" matInput placeholder="Password confirmation"
+             class="form-control"
+             name="passwordconfirm"
+             [(ngModel)]="form.passwordconfirm"
+             required
+             #passwordconfirm="ngModel">
       <mat-icon matSuffix>security</mat-icon>
     </mat-form-field>
   </div>
+  </form>
   <div>
-    <button mat-raised-button color="primary" style="left: 25%">Sign Up</button>
+    <button mat-raised-button color="primary" style="left: 25%" *ngIf="form.password == form.passwordconfirm && form.password !== '' && form.passwordconfirm !== ''" (click)="SignUp()">Sign Up</button>
   </div>
 </div>

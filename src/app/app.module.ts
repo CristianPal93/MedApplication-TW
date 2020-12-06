@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {MaterialsModule} from './materials/materials.module';
 import { LoginComponent } from './login/login.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DonationsComponent} from './donations/donations.component';
 import {BottomBodyComponent} from './bottom-body/bottom-body.component';
 import {FooterComponent} from './footer/footer.component';
@@ -25,6 +25,23 @@ import { ResourcesRightComponent } from './resources-right/resources-right.compo
 import { ContactUsLeftComponent } from './contact-us-left/contact-us-left.component';
 import { ContactUsRightComponent } from './contact-us-right/contact-us-right.component';
 import { HomeComponent } from './home/home.component';
+import { authInterceptorProviders } from './_services/auth.interceptor';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { AboutUSComponent } from './about-us/about-us.component';
+import { MergeLoginComponent } from './merge-login/merge-login.component';
+import { HomeMergeComponent } from './home-merge/home-merge.component';
+import { HttpClientModule } from '@angular/common/http';
+import { News1Component } from './news1/news1.component';
+import { News2Component } from './news2/news2.component';
+import { News3Component } from './news3/news3.component';
+import { News4Component } from './news4/news4.component';
+import { MissionMergeComponent } from './mission-merge/mission-merge.component';
+import { MergeRegisterComponent } from './merge-register/merge-register.component';
+import { MergeForgotPaswordComponent } from './merge-forgot-pasword/merge-forgot-pasword.component';
+import { HowWeWorkMergeComponent } from './how-we-work-merge/how-we-work-merge.component';
+import { AuthService } from './_services/auth.service';
+import { ContactMergeComponent } from './contact-merge/contact-merge.component';
+import { ResourceMergeComponent } from './resource-merge/resource-merge.component';
 
 @NgModule({
   declarations: [
@@ -48,15 +65,31 @@ import { HomeComponent } from './home/home.component';
     ResourcesRightComponent,
     ContactUsLeftComponent,
     ContactUsRightComponent,
-    HomeComponent
+    HomeComponent,
+    AboutUSComponent,
+    MergeLoginComponent,
+    HomeMergeComponent,
+    News1Component,
+    News2Component,
+    News3Component,
+    News4Component,
+    MissionMergeComponent,
+    MergeRegisterComponent,
+    MergeForgotPaswordComponent,
+    HowWeWorkMergeComponent,
+    ContactMergeComponent,
+    ResourceMergeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialsModule,
     FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

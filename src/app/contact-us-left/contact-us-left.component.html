@@ -1,1 +1,52 @@
-<p>contact-us-left works!</p>
+<h1 style="color: green; font-weight: bold">Let us know what you think!</h1><br><br>
+<div>
+  <form
+  name="form"
+  (ngSubmit)="f.form.valid"
+  #f="ngForm"
+  novalidate
+>
+  <div class="username">
+    <mat-form-field appearance="outline">
+      <mat-label>Email address</mat-label>
+      <input matInput placeholder="Email address" name="email"
+      [(ngModel)]="form.email"
+      required
+      #email="ngModel">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput placeholder="First Name" name="firstname"
+      [(ngModel)]="form.firstname"
+      required
+      #firstname="ngModel">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput placeholder="Last Name" name="lastname"
+      [(ngModel)]="form.lastname"
+      required
+      #lastname="ngModel">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="subject">
+    <mat-form-field appearance="outline">
+      <mat-label>Subject</mat-label>
+      <textarea matInput name="subject"
+      [(ngModel)]="form.subject"
+      required
+      #subject="ngModel"></textarea>
+    </mat-form-field>
+  <div>
+    <button mat-raised-button color="primary" style="left: 5%" (click)="onSubmit()">Submit</button>
+  </div>
+</div>
+</form>
+</div>

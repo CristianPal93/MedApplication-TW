@@ -1,0 +1,87 @@
+h1 {
+  color: green;
+  text-align: center;
+}
+
+/* .br{
+  color: green;
+  text-align: center;
+} */
+span{
+  font-size: 25px;
+  color: blue;
+}
+
+div.primul{
+
+  padding-top: 5%;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+
+
+}
+img.img{
+  max-width:75%;
+  max-height:75%;
+}
+div.doi{
+  padding-left: 10%;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+
+
+}
+div.trei{
+  padding-right: 2%;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+}
+div.patru{
+  padding-left: 5%;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+}
+div.cinci{
+  padding-left: 10%;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+}
+h1.h2{
+  text-align: left;
+  color: blue;
+  font-size: 25px;
+  font-family: 'Playfair Display', serif;
+
+
+}
+h1.h3{
+  text-align: left;
+  color: blue;
+  font-size: 25px;
+  font-family: 'Playfair Display', serif;
+
+
+}
+h1.h4{
+  text-align: left;
+  color: blue;
+  font-size: 25px;
+  font-family: 'Playfair Display', serif;
+
+
+}
+div.trei{
+  padding-bottom: 25%;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+
+
+}
+div.patru{
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+
+
+}
