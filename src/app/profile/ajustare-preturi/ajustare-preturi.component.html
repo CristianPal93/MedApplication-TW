@@ -1,0 +1,17 @@
+<h1>Ajustare preturi servicii</h1>
+<div class="row">
+  <p>{{message}}</p>
+  <div class="trimitere">
+    <div class="serv" *ngFor="let service of listaServicii">
+      <div class="column">
+        <mat-label>{{service[0]}}</mat-label>
+      </div>
+      <div class="column">
+        <mat-form-field apperence="outline">
+          <input matInput type="text" id={{service[0]}} value="{{service[1]}}">
+        </mat-form-field>
+      </div>
+      </div>
+    <button mat-raised-button color="accent" (click)="submit()">Modificare servicii</button>
+  </div>
+</div>

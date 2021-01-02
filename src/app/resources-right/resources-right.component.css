@@ -1,0 +1,22 @@
+p.title{
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  color: green;
+}
+p.subtitle{
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  padding-left: 50px;
+  color: blue;
+}
+article.article{
+
+}
+h1.article-title{
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+}
+p.description{
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 15px;
+}

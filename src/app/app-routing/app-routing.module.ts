@@ -12,11 +12,10 @@ import {News2Component} from '../news2/news2.component';
 import {News3Component} from '../news3/news3.component';
 import {News4Component} from '../news4/news4.component';
 import { MissionMergeComponent } from '../mission-merge/mission-merge.component';
-import { HowWeWorkLeftComponent } from '../how-we-work-left/how-we-work-left.component';
 import { HowWeWorkMergeComponent } from '../how-we-work-merge/how-we-work-merge.component';
-import { ContactUsRightComponent } from '../contact-us-right/contact-us-right.component';
 import { ContactMergeComponent } from '../contact-merge/contact-merge.component';
 import { ResourceMergeComponent } from '../resource-merge/resource-merge.component';
+import { AuthGuardService } from '../_services/auth-guard.service';
 
 const routes: Routes = [
   {path: '', component: HomeMergeComponent},
@@ -32,9 +31,12 @@ const routes: Routes = [
   {path: 'mission', component: MissionMergeComponent},
   {path: 'howwework', component: HowWeWorkMergeComponent},
   {path: 'contactUs', component: ContactMergeComponent},
-  {path: 'resource', component: ResourceMergeComponent}
-
-]
+  {path: 'resource', component: ResourceMergeComponent},
+  {path: 'profile',
+  canActivate: [AuthGuardService],
+  loadChildren: () => import('../subrouting/profile/profile.module').then(m=>m.ProfileModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

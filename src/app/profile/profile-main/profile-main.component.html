@@ -1,0 +1,32 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav  mode="side" opened class="Sidenav">
+    <div class="componets">
+    <button type="button" mat-raised-button color="accent" routerLink='/profile/personal-details'>Personal profile</button><br>
+
+      <div class="pacient" *ngIf="checkRightPacient()">
+      <button type="button" mat-raised-button color="accent" routerLink='/profile/rezultate-pacient'>Rezultate</button><br>
+        <button type="button" mat-raised-button color="accent" routerLink='/profile/programari'>Programari</button><br>
+
+      </div>
+    <div class="medic" *ngIf="checkRightDoctor()">
+      <button type="button" mat-raised-button color="accent" routerLink='/profile/trimiteri'>Trimiteri</button>
+      <button type="button" mat-raised-button color="accent" routerLink='/profile/consult-doctor'>Eliberare scrisoare</button>
+
+    </div>
+    <div class="secretara" *ngIf="checkRightSecretara()">
+<!--      <button type="button" mat-raised-button color="accent" routerLink='/profile/trimiteri'>Trimiteri</button>-->
+      <button type="button" mat-raised-button color="accent" routerLink='/profile/daily-schedules'>Daily Schedules</button>
+      <button type="button" mat-raised-button color="accent" routerLink='/profile/consult-secretara'>Foi de consult</button>
+
+    </div>
+    <div class="admin" *ngIf="checkRightAdmin()">
+      <button class="admin" type="button" mat-raised-button color="accent" routerLink='/profile/ajustare-preturi'>Ajustare preturi</button>
+      <button class="admin" type="button" mat-raised-button color="accent" routerLink='/profile/creare-conturi-doctor'>Cont Doctor</button>
+      <button class="admin" type="button" mat-raised-button color="accent" routerLink='/profile/creare-conturi'>Cont Secretara</button>
+    </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="mainContent">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

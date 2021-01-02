@@ -1,0 +1,107 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+<div class="row">
+  <div class="column">
+    <h1 class="programari">Programari</h1>
+    <mat-form-field class="example-form-field">
+
+      <mat-label>CNP</mat-label>
+      <input matInput type="text" disabled value="{{cnpPacient}}">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Nume pacient</mat-label>
+      <input matInput type="text" disabled value="{{numePacient}}">
+    </mat-form-field><br>
+    <mat-divider></mat-divider>
+    <mat-form-field appearance="fill" class="example-form-field">
+      <mat-label>Selecteaza medicul</mat-label>
+      <mat-select [(ngModel)]="doctornume" [formControl]="validare_medic">
+        <mat-option *ngFor="let doctor of doctorProgramare" value="{{doctor}}">{{doctor}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="validare_medic.hasError('required')">Selectati medicul!</mat-error>
+      <mat-error *ngIf="validare_medic.hasError('invalidValue')">Please choose any other</mat-error>
+      <!--      <mat-hint>{{validare_cereri.value}}</mat-hint>-->
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Specializarea</mat-label>
+      <input matInput type="text" disabled value="{{specializareaPacient}}">
+    </mat-form-field><br>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Data</mat-label>
+      <input matInput type="text" disabled value="{{dataPacient}}">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Ora</mat-label>
+      <input matInput type="text" disabled value="{{oraPacient}}">
+    </mat-form-field><br>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Detalii consultatie</mat-label>
+      <input matInput type="text" disabled value="{{detaliiPacient}}">
+    </mat-form-field><br>
+    <mat-divider></mat-divider>
+    <mat-form-field appearance="fill" class="example-form-field">
+      <mat-label>Tip cerere</mat-label>
+      <mat-select [(ngModel)]="cerere_v" [formControl]="validare_cereri" required>
+        <mat-option *ngFor="let cerere of cerereri" [value]="cerere.value">
+          {{cerere.viewValue}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="validare_cereri.hasError('required')">Selectati tipul cereri!</mat-error>
+      <mat-error *ngIf="validare_cereri.hasError('invalidValue')">Please choose any other</mat-error>
+<!--      <mat-hint>{{validare_cereri.value}}</mat-hint>-->
+    </mat-form-field><br>
+    <button mat-raised-button color="accent" (click)="saveProgramare()" *ngIf="!validare_cereri.hasError('required') && !validare_medic.hasError('required')">Programeaza</button>
+  </div>
+  <div class="column">
+    <h1 class="programate">Programate</h1>
+    <div class="aprobate">
+
+      <mat-form-field class="example-form-field">
+
+        <mat-label>CNP</mat-label>
+        <input matInput type="text" disabled value="{{cnp}}">
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <mat-form-field class="example-form-field">
+        <mat-label>Nume pacient</mat-label>
+        <input matInput type="text" disabled value="{{nume}}">
+      </mat-form-field><br>
+      <mat-divider></mat-divider>
+      <mat-form-field class="example-form-field">
+        <mat-label>Nume doctor</mat-label>
+        <input matInput type="text" disabled value="{{doctor}}">
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <mat-form-field class="example-form-field">
+        <mat-label>Specializarea</mat-label>
+        <input matInput type="text" disabled value="{{specializarea}}">
+      </mat-form-field><br>
+      <mat-divider></mat-divider>
+      <mat-form-field class="example-form-field">
+        <mat-label>Data</mat-label>
+        <input matInput type="text" [(ngModel)]="data" value="{{data}}">
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <mat-form-field class="example-form-field">
+        <mat-label>Ora</mat-label>
+        <input matInput type="text" [(ngModel)]="ora" value="{{ora}}">
+      </mat-form-field><br>
+      <mat-divider></mat-divider>
+      <mat-form-field class="example-form-field">
+        <mat-label>Detalii consultatie</mat-label>
+        <input matInput type="text" disabled value="{{detalii}}">
+      </mat-form-field><br>
+
+      <button mat-raised-button color="accent" (click)="previewsPacient()" style="margin-right: 10px">Previews</button>
+      <button mat-raised-button color="accent" (click)="nextPacient()">Next</button>
+      <div class="modif">
+      <button mat-raised-button color="accent" (click)="modifica()" style="margin-right: 10px">Modifica</button>
+      <button mat-raised-button color="accent" (click)="sterge()">Sterge</button>
+      </div>
+      </div>
+  </div>
+</div>

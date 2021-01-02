@@ -12,7 +12,7 @@ export class OurTeamRightComponent implements OnInit {
   doctors: [];
   ngOnInit(): void {
     this.requestService.getStaff().subscribe(data=>{
-      this.doctors = data;
+      this.doctors = data.doctor;
       console.log(this.doctors)
     })
   }

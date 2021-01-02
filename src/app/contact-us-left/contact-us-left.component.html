@@ -36,17 +36,14 @@
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     </mat-form-field>
   </div>
-  <div class="subject">
-    <mat-form-field appearance="outline">
+
+    <mat-form-field appearance="outline" class="textaria">
       <mat-label>Subject</mat-label>
       <textarea matInput name="subject"
       [(ngModel)]="form.subject"
       required
       #subject="ngModel"></textarea>
     </mat-form-field>
-  <div>
-    <button mat-raised-button color="primary" style="left: 5%" (click)="onSubmit()">Submit</button>
-  </div>
-</div>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
 </form>
 </div>

@@ -1,0 +1,112 @@
+
+<h1>Creare cont de Secretara</h1><div>
+  <form
+    name="form"
+    (ngSubmit)="f.form.valid"
+    #f="ngForm"
+    novalidate
+  >
+    <div class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Nume</mat-label>
+        <input matInput placeholder="Nume"
+               type="text"
+               class="form-control"
+               name="firstname"
+               [(ngModel)]="form.firstname"
+               required
+               #firstname="ngModel"
+
+        >
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Prenume</mat-label>
+        <input matInput placeholder="Prenume"
+               type="text"
+               class="form-control"
+               name="lastname"
+               [(ngModel)]="form.lastname"
+               required
+               #lastname="ngModel"
+
+        >
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Email address</mat-label>
+        <input matInput placeholder="Email address"
+               type="text"
+               class="form-control"
+               name="email"
+               [(ngModel)]="form.email"
+               required
+               #email="ngModel"
+        >
+        <mat-icon matSuffix>alternate_email</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>CNP</mat-label>
+        <input matInput placeholder="CNP"
+               type="text"
+               class="form-control"
+               name="cnp"
+               [(ngModel)]="form.cnp"
+               required
+               #cnp="ngModel"
+
+        >
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Telefon</mat-label>
+        <input matInput placeholder="Telefon"
+               type="text"
+               class="form-control"
+               name="Telefon"
+               [(ngModel)]="form.cellphone"
+               required
+               #cellphone="ngModel"
+
+        >
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type ="password" matInput placeholder="Password"
+               class="form-control"
+               name="password"
+               [(ngModel)]="form.password"
+               required
+               #password="ngModel"
+        >
+        <mat-icon matSuffix>security</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Password confirmation</mat-label>
+        <input type ="password" matInput placeholder="Password confirmation"
+               class="form-control"
+               name="passwordconfirm"
+               [(ngModel)]="form.passwordconfirm"
+               required
+               #passwordconfirm="ngModel">
+        <mat-icon matSuffix>security</mat-icon>
+      </mat-form-field>
+    </div>
+  </form>
+  <div>
+    <button mat-raised-button color="accent" style="left: 25%" *ngIf="form.password == form.passwordconfirm && form.password !== '' && form.passwordconfirm !== ''" (click)="SignUp()">Creare cont</button>
+  </div>
+</div>

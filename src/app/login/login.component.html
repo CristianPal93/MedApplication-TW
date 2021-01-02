@@ -1,5 +1,6 @@
 <div class="col-md-12">
   <div class="card card-container">
+
     <form
       *ngIf="!isLoggedIn"
       name="form"
@@ -7,6 +8,8 @@
       #f="ngForm"
       novalidate
     >
+      <div class="sign-up-or-sign-in"><b>Sign up!</b> &nbsp;&nbsp;<span style="color: green">or</span> &nbsp;&nbsp; <b>Sign in!</b></div>
+      <br>
       <div class="form-group">
         <mat-form-field appearance="outline">
           <mat-label>Email address</mat-label>
@@ -70,7 +73,7 @@
     </form>
 
     <div class="alert alert-success" *ngIf="isLoggedIn">
-      Logged in as {{ roles }}.
+      <app-donations></app-donations>
     </div>
   </div>
 </div>

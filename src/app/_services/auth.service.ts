@@ -35,6 +35,8 @@ export class AuthService {
     return this.http.post(AUTH_API + 'register-client', null, httpOptions);
   }
 
+
+
   reset(email) :Observable<any>{
     const httpOptions = {
       headers: new HttpHeaders({

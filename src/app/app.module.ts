@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -14,8 +13,6 @@ import {ForgotPasswordComponent} from './forgot-password/forgot-password.compone
 import {RegisterComponent} from './register/register.component';
 import { AboutusleftComponent } from './aboutusleft/aboutusleft.component';
 import { AboutusrightComponent } from './aboutusright/aboutusright.component';
-import { HowWeWorkRightComponent } from './how-we-work-right/how-we-work-right.component';
-import { HowWeWorkLeftComponent } from './how-we-work-left/how-we-work-left.component';
 import { MissionLeftComponent } from './mission-left/mission-left.component';
 import { MissionRightComponent } from './mission-right/mission-right.component';
 import { OurTeamRightComponent } from './our-team-right/our-team-right.component';
@@ -39,9 +36,20 @@ import { MissionMergeComponent } from './mission-merge/mission-merge.component';
 import { MergeRegisterComponent } from './merge-register/merge-register.component';
 import { MergeForgotPaswordComponent } from './merge-forgot-pasword/merge-forgot-pasword.component';
 import { HowWeWorkMergeComponent } from './how-we-work-merge/how-we-work-merge.component';
-import { AuthService } from './_services/auth.service';
 import { ContactMergeComponent } from './contact-merge/contact-merge.component';
 import { ResourceMergeComponent } from './resource-merge/resource-merge.component';
+import { ProfileMainComponent } from './profile/profile-main/profile-main.component';
+import { PersonalProfileComponent } from './profile/personal-profile/personal-profile.component';
+import { ProgramariComponent } from './profile/programari/programari.component';
+import { ProfileModule } from './subrouting/profile/profile.module';
+import { DailySchedulesComponent } from './profile/medic/daily-schedules/daily-schedules.component';
+import { TrimiteriComponent } from './trimiteri/trimiteri.component';
+import { AjustarePreturiComponent } from './profile/ajustare-preturi/ajustare-preturi.component';
+import { CreareConturiComponent } from './profile/creare-conturi/creare-conturi.component';
+import { CreareContDoctorComponent } from './profile/creare-cont-doctor/creare-cont-doctor.component';
+import { ConsultSecretaraComponent } from './profile/consult-secretara/consult-secretara.component';
+import { ConsultDoctorComponent } from './profile/consult-doctor/consult-doctor.component';
+import { RezultatePacientComponent } from './profile/rezultate-pacient/rezultate-pacient.component';
 
 @NgModule({
   declarations: [
@@ -55,8 +63,6 @@ import { ResourceMergeComponent } from './resource-merge/resource-merge.componen
     RegisterComponent,
     AboutusleftComponent,
     AboutusrightComponent,
-    HowWeWorkRightComponent,
-    HowWeWorkLeftComponent,
     MissionLeftComponent,
     MissionRightComponent,
     OurTeamRightComponent,
@@ -78,7 +84,18 @@ import { ResourceMergeComponent } from './resource-merge/resource-merge.componen
     MergeForgotPaswordComponent,
     HowWeWorkMergeComponent,
     ContactMergeComponent,
-    ResourceMergeComponent
+    ResourceMergeComponent,
+    ProfileMainComponent,
+    PersonalProfileComponent,
+    ProgramariComponent,
+    DailySchedulesComponent,
+    TrimiteriComponent,
+    AjustarePreturiComponent,
+    CreareConturiComponent,
+    CreareContDoctorComponent,
+    ConsultSecretaraComponent,
+    ConsultDoctorComponent,
+    RezultatePacientComponent
   ],
   imports: [
     BrowserModule,
@@ -90,6 +107,7 @@ import { ResourceMergeComponent } from './resource-merge/resource-merge.componen
     ReactiveFormsModule
   ],
   providers: [authInterceptorProviders],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [AppRoutingModule, ProfileModule]
 })
 export class AppModule { }

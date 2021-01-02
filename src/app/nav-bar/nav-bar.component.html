@@ -7,7 +7,7 @@
     >About us</button>
     <button mat-button color="primary" style="color: green"
     routerLink="/howwework"
-    >How we work</button>
+    >Tarife servicii</button>
     <button mat-button color="primary" style="color: green"
     routerLink = "/mission"
     >Mission & Vision</button>
@@ -20,15 +20,22 @@
     <button mat-button color="primary" style="color: green"
     routerLink="/contactUs"
     >Contact Us</button>
-    <button mat-icon-button color="accent" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink = "/login">
+    <button mat-icon-button color="accent" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink = "/login" *ngIf='!isLoggedIn'>
       <mat-icon
       color="accent">
       login
     </mat-icon></button>
+    <button mat-button [matMenuTriggerFor]="menu" *ngIf='isLoggedIn'>
+    <mat-icon
+    color="accent"
+      >how_to_reg</mat-icon></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink = "/profile/personal-details">Profile</button>
+      <button mat-menu-item (click)="signOut()">Log out</button>
+    </mat-menu>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="/">
       <mat-icon
         color="accent"
-
       >home</mat-icon>
     </button>
   </mat-toolbar>

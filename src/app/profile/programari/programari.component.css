@@ -1,0 +1,14 @@
+mat-form-field{
+  width: 237px;
+}
+textarea{
+  min-width: 237;
+}
+.example-container{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+h1{
+  font-size: 250%;
+  font-weight:bold;
+}

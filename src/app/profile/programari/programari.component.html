@@ -1,0 +1,67 @@
+<div class="example-container">
+  <h1>Programari</h1>
+  <p *ngIf="(showResponse2)" style="color: red">{{msg2}}</p>
+  <p *ngIf="(showResponse)" style="color: green">{{msg}}</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Prenume</mat-label>
+    <input matInput [(ngModel)]="lastName" value="lastName">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Nume</mat-label>
+    <input matInput [(ngModel)]="firstName" value="firstName">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill" *ngIf="secretara">
+    <mat-label>CNP</mat-label>
+    <input matInput [(ngModel)]="cnp" value="firstName">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Programare catre</mat-label>
+    <mat-select [(ngModel)]="specializarea">
+      <mat-option *ngFor="let specializare of specializari" value="{{specializare.toString()}}" >{{specializare}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <div class="secretaraClass">
+    <mat-form-field appearance="fill" *ngIf="secretara">
+      <mat-label>Selecteaza medicul</mat-label>
+      <mat-select [(ngModel)]="doctornume">
+            <mat-option *ngFor="let doctor of doctorProgramare" value="{{doctor}}">{{doctor}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+  </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Data</mat-label>
+    <input
+    matInput
+    [matDatepicker]="picker"
+    [(ngModel)]="dataProgramarii"
+    >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label >Ora</mat-label>
+    <mat-select [(ngModel)]="ora">
+      <mat-option value="{{oraIn}}" *ngFor="let oraIn of ore">{{oraIn}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Detalii</mat-label>
+    <textarea matInput [(ngModel)]="details" value="details"></textarea>
+  </mat-form-field>
+  <br>
+  <div class="disableifsecretara" *ngIf="!secretara">
+  <button mat-raised-button type="button" color="accent" (click)="creazaProgramare()">Programeaza!</button>
+  </div>
+  <div class="secretaraClass" *ngIf="secretara">
+  <button mat-raised-button type="button" color="accent" (click)="creazaProgramareSecretara()">Programeaza!</button>
+  </div>
+</div>
+
+

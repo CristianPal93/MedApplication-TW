@@ -1,0 +1,36 @@
+.example-events {
+  height: 200px;
+  border: 1px solid #555;
+  overflow: auto;
+}
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 3rem;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.aprobate{
+  margin-left: 3rem;
+  margin-top: 13px;
+}
+div.modif{
+  padding-top: 8px;
+  display: inline-block;
+}
+
+/*h1{*/
+/*  padding-bottom: 50px;*/
+/*  align-content: center;*/
+/*}*/
+h1.programari{
+align-content: center;
+  padding-left: 20px;
+}
+h1.programate{
+align-content: center;
+  padding-left: 55px;
+}

@@ -1,8 +1,21 @@
+
 <mat-grid-list cols="20" rowHeight="3:2">
   <mat-grid-tile colspan="8" rowspan="13" >
-    <app-how-we-work-left></app-how-we-work-left>
+    <app-aboutusleft></app-aboutusleft>
   </mat-grid-tile>
   <mat-grid-tile colspan="12" rowspan="13">
-    <app-how-we-work-right></app-how-we-work-right>
+    <div class="pozitionare">
+      <div *ngIf="vizibil">
+        <h1>Servicii</h1>
+        <mat-list *ngFor="let item of listaServicii" >
+          <mat-list-item class="underline-on-hover">{{"Serviciul "+item[0]+"-"+item[1]+"Ron"}}</mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </div>
+      <div *ngIf="!vizibil">
+        <p>Nu exista servicii in sistem!</p>
+      </div>
+    </div>
   </mat-grid-tile>
 </mat-grid-list>
+

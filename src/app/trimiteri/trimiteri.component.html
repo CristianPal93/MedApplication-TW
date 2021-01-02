@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="column">
+    <mat-form-field class="example-form-field">
+      <mat-label>CNP</mat-label>
+      <input matInput type="text" disabled value="{{cnp}}">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Nume pacient</mat-label>
+      <input matInput type="text" disabled value="{{nume}}">
+    </mat-form-field><br>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Data</mat-label>
+      <input matInput type="text" disabled value="{{data}}">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Ora</mat-label>
+      <input matInput type="text" disabled value="{{ora}}">
+    </mat-form-field><br>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Detalii consultatie</mat-label>
+      <input matInput type="text" disabled value="{{detalii}}">
+    </mat-form-field><br>
+    <button mat-raised-button color="accent" (click)="previewsPacient()" style="margin-right: 5px">Previews</button>
+    <button mat-raised-button color="accent" (click)="nextPacient()">Next</button>
+  </div>
+  <div class="column">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="trimitere">
+        <div class="serv" *ngFor="let service of serviciu">
+          <mat-checkbox class="servicii" (change)="onChange(service[0], $event.checked)">{{service[0]}} - {{service[1]}} RON</mat-checkbox>
+        </div>
+        <button mat-raised-button color="accent">Creaza o trimitere</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
-import {RequestsService} from '../_services/requests.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,15 +12,19 @@ export class RegisterComponent implements OnInit {
   form: any = {};
   responseRegister: string;
 
-  constructor(private register: AuthService) { }
+  // tslint:disable-next-line:variable-name
+  constructor(private register: AuthService, private _router: Router) { }
+
 
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:typedef
   SignUp() {
-    this.register.register(this.form).subscribe(data =>{
+    this.register.register(this.form).subscribe(data => {
       this.responseRegister = data.message;
-        alert(this.responseRegister);
-    })
+      alert(this.responseRegister);
+      this._router.navigate(['']);
+    });
   }
 }

@@ -1,0 +1,19 @@
+.example-card {
+  max-width: 250px;
+  margin-left: 2vh;
+  margin-bottom: 2vh;
+}
+
+.example-header-image {
+  background-image: url("https://www.ipharmd.net/images/caduceus_medical_logo_symbol.png");
+  background-size: cover;
+}
+.container{
+  display: flex;
+  /* align-content: center;
+  justify-content: center; */
+}
+img{
+  width: 15rem;
+  height: 15rem;
+}

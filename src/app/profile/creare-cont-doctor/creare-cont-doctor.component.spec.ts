@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HowWeWorkRightComponent } from './how-we-work-right.component';
+import { CreareContDoctorComponent } from './creare-cont-doctor.component';
 
-describe('HowWeWorkRightComponent', () => {
-  let component: HowWeWorkRightComponent;
-  let fixture: ComponentFixture<HowWeWorkRightComponent>;
+describe('CreareContDoctorComponent', () => {
+  let component: CreareContDoctorComponent;
+  let fixture: ComponentFixture<CreareContDoctorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HowWeWorkRightComponent ]
+      declarations: [ CreareContDoctorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HowWeWorkRightComponent);
+    fixture = TestBed.createComponent(CreareContDoctorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

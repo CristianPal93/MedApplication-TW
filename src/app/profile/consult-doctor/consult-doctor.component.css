@@ -1,0 +1,34 @@
+/*.column {*/
+/*  float: left;*/
+/*  width: 100%;*/
+/*  margin-top: 3rem;*/
+/*}*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  width: 100%;
+}
+
+.trimitere{
+  margin-left: 3rem;
+  margin-top: 13px;
+}
+div.butoane{
+  display: inline-block;
+
+}
+/*mat-form-field.servi{*/
+/*  display: block;*/
+/*}*/
+mat-form-field.servi{
+  display: block;
+}
+div.trimit{
+  align-content: center;
+  display: inline-block;
+  padding-top: 20px;
+}
+h1{
+  align-content: center;
+}

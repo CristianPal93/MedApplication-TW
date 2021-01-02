@@ -1,0 +1,27 @@
+.container{
+  margin-top: 1vh;
+  margin-bottom: 5vh;
+}
+.details{
+  padding-top: 5px;
+}
+.input-group{
+  font-weight: bold;
+  width: 200px;
+  padding-left: 2rem;
+}
+textarea {
+  min-width: 170px;
+  max-width: 170px;
+  min-height: 50px;
+
+}
+button{
+  margin-top: 1rem;
+  width: 177px;
+  margin: 8px;
+}
+h1{
+  font-size: 250%;
+  font-weight:bold;
+}

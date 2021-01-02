@@ -1,0 +1,48 @@
+<div class="row">
+  <h1>Eliberare scrisoare medicala</h1>
+
+<!--  <div class="column">-->
+    <mat-form-field class="example-form-field">
+      <mat-label>CNP</mat-label>
+      <input matInput type="text" disabled value="{{cnp}}">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Nume pacient</mat-label>
+      <input matInput type="text" disabled value="{{nume}}">
+    </mat-form-field><br>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Data</mat-label>
+      <input matInput type="text" disabled value="{{data}}">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Ora</mat-label>
+      <input matInput type="text" disabled value="{{ora}}">
+    </mat-form-field><br>
+    <mat-divider></mat-divider>
+    <mat-form-field class="example-form-field">
+      <mat-label>Adresa pacient</mat-label>
+      <input matInput type="text" required [(ngModel)]="adresa">
+    </mat-form-field><br>
+  <mat-divider></mat-divider>
+  <mat-form-field class="example-form-field">
+    <mat-label>Pescriptie</mat-label>
+    <input matInput type="text" required [(ngModel)]="simptome">
+  </mat-form-field><br>
+  <mat-divider></mat-divider>
+
+  <mat-form-field class="example-form-field">
+    <mat-label>Diagnostic</mat-label>
+    <input matInput type="text"  required [(ngModel)]="diagnostic">
+  </mat-form-field><br>
+    <div class="butoane">
+    <button mat-raised-button color="accent" (click)="previewsPacient()" style="margin-right: 5px">Previews</button>
+    <button mat-raised-button color="accent" (click)="nextPacient()">Next</button><br>
+      <div class="trimit">
+      <button mat-raised-button color="accent" (click)="finalizareConsult()">Elibereaza scrisoarea</button>
+      </div>
+    </div>
+<!--  </div>-->
+</div>

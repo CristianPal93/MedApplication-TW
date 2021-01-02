@@ -1,3 +1,9 @@
+h1.register_text{
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: royalblue;
+}
 h1.title {
   font-size: 50px;
   font-family: 'Passion One', cursive;

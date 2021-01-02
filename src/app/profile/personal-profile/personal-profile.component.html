@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="header">
+    <h1>Personal details</h1>
+  </div>
+  <p *ngIf="(showResponse)" style="color: green">{{msg}}</p>
+  <div class="details">
+    <mat-form-field appearance="fill">
+      <mat-label>Nume</mat-label>
+      <input matInput value={{firstName}} [(ngModel)]="firstName">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Prenume</mat-label>
+      <input matInput value={{lastName}} [(ngModel)]="lastName">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput value={{email}} disabled [(ngModel)]="email">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Addresa</mat-label>
+      <textarea matInput value={{address}} [(ngModel)]="address"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Telefon</mat-label>
+      <input matInput value={{phone}} [(ngModel)]="phone">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>CNP</mat-label>
+      <input matInput value={{cnp}} disabled [(ngModel)]="cnp">
+    </mat-form-field>
+    <br>
+    <button type="button" mat-raised-button color="accent" (click)="changeDetails()">Save</button>
+  </div>
+</div>

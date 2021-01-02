@@ -1,6 +1,5 @@
-import { registerLocaleData } from '@angular/common';
 import {Injectable, OnInit} from '@angular/core';
-import {BehaviorSubject, Subject} from 'rxjs';
+import {BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +24,9 @@ export class InterantionService implements OnInit {
 
   private forgotComponentStatus = new BehaviorSubject<boolean>(false);
   forgotComponentStatus$ = this.forgotComponentStatus.asObservable();
+
+  private getUserRightStats = new BehaviorSubject<string>('');
+  getUserRightsStats$ = this.getUserRightStats.asObservable();
 
   // tslint:disable-next-line:contextual-lifecycle
   ngOnInit(): void {
@@ -52,6 +54,10 @@ export class InterantionService implements OnInit {
   // tslint:disable-next-line:typedef
   forgotStatus(status){
     this.forgotComponentStatus.next(status);
+  }
+
+  passUserRights(rights){
+    this.getUserRightStats.next(rights);
   }
 
 }

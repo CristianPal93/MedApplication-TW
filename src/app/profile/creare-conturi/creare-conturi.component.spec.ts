@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HowWeWorkLeftComponent } from './how-we-work-left.component';
+import { CreareConturiComponent } from './creare-conturi.component';
 
-describe('HowWeWorkLeftComponent', () => {
-  let component: HowWeWorkLeftComponent;
-  let fixture: ComponentFixture<HowWeWorkLeftComponent>;
+describe('CreareConturiComponent', () => {
+  let component: CreareConturiComponent;
+  let fixture: ComponentFixture<CreareConturiComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HowWeWorkLeftComponent ]
+      declarations: [ CreareConturiComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HowWeWorkLeftComponent);
+    fixture = TestBed.createComponent(CreareConturiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

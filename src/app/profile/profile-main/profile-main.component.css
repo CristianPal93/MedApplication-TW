@@ -1,0 +1,25 @@
+.container {
+width: 100%;
+height: 80vh;
+background-color: white;
+
+}
+
+mat-sidenav.Sidenav{
+  width: 8%;
+}
+
+div.componets{
+  width: 100%;
+}
+
+button{
+  margin-top: 1rem;
+  width: 100%;
+}
+.mainContent{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+}

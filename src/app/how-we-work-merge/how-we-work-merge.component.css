@@ -1,0 +1,11 @@
+.underline-on-hover:hover {
+  text-decoration: underline;
+}
+h1{
+  align-content: center;
+  font-size: 250%;
+  font-weight:bold;
+}
+div.pozitionare{
+  align-content: center;
+}
