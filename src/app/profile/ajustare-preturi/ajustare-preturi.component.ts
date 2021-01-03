@@ -20,7 +20,9 @@ export class AjustarePreturiComponent implements OnInit {
       console.log(this.listaServicii);
     });
   }
-
+  displayMsg(input){
+    this.message = input;
+  }
   submit(){
     let test = [];
     Array.from(document.getElementsByTagName("input")).map(inputData =>{
@@ -29,6 +31,8 @@ export class AjustarePreturiComponent implements OnInit {
     });
     this._requestServices.AjustareServicii(test).subscribe(data =>{
       this.message = data['message'].toString();
+      setTimeout(() => this.displayMsg(''), 5000);
+
     })
   };
 
