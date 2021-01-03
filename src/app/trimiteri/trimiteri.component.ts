@@ -117,6 +117,16 @@ export class TrimiteriComponent implements OnInit {
       this.nextPacient();
       this.servicii = [];
       this.serviciiAccesate.clear();
+      this._requestServices.getSchedulePerDoctor(this.cnpDoctor).subscribe(data =>{
+        this.pacientiProgramati = data['pacients'];
+
+        this.i = 0;
+        if (this.pacientiProgramati.length > 0){
+          this.switchPacient();
+        }
+        window.location.reload();
+
+      });
     });
   }
 }
